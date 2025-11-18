@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимации - VLAN Технологии</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .animation-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .animation-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .animation-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .animation-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        /* Анимированные элементы */
+        .pulse-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            margin: 20px 0;
+        }
+
+        .bouncing-ball {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #1cbc11, #14a20a);
+            border-radius: 50%;
+            animation: bounce 1s infinite alternate;
+            margin: 20px 0;
+        }
+
+        .rotating-square {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            animation: rotate 3s linear infinite;
+            margin: 20px 0;
+        }
+
+        .sliding-bar {
+            width: 200px;
+            height: 20px;
+            background: linear-gradient(90deg, #4834d4, #686de0);
+            border-radius: 10px;
+            animation: slide 2s ease-in-out infinite alternate;
+            margin: 20px 0;
+        }
+
+        .typing-text {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            border-right: 3px solid #2c3e50;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(20) infinite, blink 0.5s step-end infinite alternate;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1cbc11, #14a20a);
+            animation: progress 4s ease-in-out infinite;
+            width: 0%;
+        }
+
+        .floating-element {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            border-radius: 20px;
+            animation: float 3s ease-in-out infinite;
+            margin: 20px 0;
+        }
+
+        .color-changing-box {
+            width: 120px;
+            height: 120px;
+            background: #667eea;
+            border-radius: 15px;
+            animation: colorChange 4s ease-in-out infinite;
+            margin: 20px 0;
+        }
+
+        /* Ключевые кадры анимаций */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-30px); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-50px); }
+            100% { transform: translateX(50px); }
+        }
+
+        @keyframes typing {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            50% { width: 100%; }
+            100% { width: 0%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes colorChange {
+            0% { background: #667eea; }
+            25% { background: #764ba2; }
+            50% { background: #f093fb; }
+            75% { background: #f5576c; }
+            100% { background: #667eea; }
+        }
+
+        /* Анимация при прокрутке */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-animation.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Кнопки управления анимациями */
+        .animation-controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 10px 20px;
+            background: #34495e;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+        }
+
+        /* Геолокация стили */
+        .geo-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .coordinates {
+            font-family: monospace;
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="animation.html" class="nav-link">Анимации</a></li>
+            <li class="nav-item"><a href="registration.html" class="nav-link">Регистрация</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Секция с анимациями -->
+        <section class="animation-section">
+            <h1>Демонстрация Анимаций</h1>
+            <p>Изучите различные типы CSS и JavaScript анимаций</p>
+
+            <div class="animation-controls">
+                <button class="control-btn" onclick="startAllAnimations()">Запустить все анимации</button>
+                <button class="control-btn" onclick="stopAllAnimations()">Остановить все анимации</button>
+                <button class="control-btn" onclick="getLocation()">Получить геолокацию</button>
+                <button class="control-btn" onclick="changeBackgroundColor()">Сменить фон</button>
+            </div>
+
+            <div class="animation-container">
+                <!-- Пульсирующий круг -->
+                <div class="animation-box scroll-animation">
+                    <h3>Пульсация</h3>
+                    <div class="pulse-circle"></div>
+                    <p>Анимация pulse с изменением масштаба</p>
+                </div>
+
+                <!-- Прыгающий мяч -->
+                <div class="animation-box scroll-animation">
+                    <h3>Прыгающий мяч</h3>
+                    <div class="bouncing-ball"></div>
+                    <p>Анимация bounce с перемещением по Y</p>
+                </div>
+
+                <!-- Вращающийся квадрат -->
+                <div class="animation-box scroll-animation">
+                    <h3>Вращение</h3>
+                    <div class="rotating-square"></div>
+                    <p>Бесконечное вращение элемента</p>
+                </div>
+
+                <!-- Движущаяся полоса -->
+                <div class="animation-box scroll-animation">
+                    <h3>Слайдер</h3>
+                    <div class="sliding-bar"></div>
+                    <p>Плавное движение вперед-назад</p>
+                </div>
+
+                <!-- Печатающийся текст -->
+                <div class="animation-box scroll-animation">
+                    <h3>Эффект печати</h3>
+                    <div class="typing-text">Технология VLAN</div>
+                    <p>Имитация печати текста</p>
+                </div>
+
+                <!-- Прогресс бар -->
+                <div class="animation-box scroll-animation">
+                    <h3>Прогресс бар</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p>Анимированное заполнение</p>
+                </div>
+
+                <!-- Плавающий элемент -->
+                <div class="animation-box scroll-animation">
+                    <h3>Плавное парение</h3>
+                    <div class="floating-element"></div>
+                    <p>Эффект левитации элемента</p>
+                </div>
+
+                <!-- Смена цвета -->
+                <div class="animation-box scroll-animation">
+                    <h3>Смена цвета</h3>
+                    <div class="color-changing-box"></div>
+                    <p>Плавное изменение цвета фона</p>
+                </div>
+            </div>
+
+            <!-- Секция геолокации -->
+            <div class="geo-section scroll-animation">
+                <h2>Геолокация</h2>
+                <p>Нажмите кнопку, чтобы получить ваши координаты</p>
+                <button class="btn" onclick="getLocation()">Получить местоположение</button>
+                <div id="coordinates" class="coordinates"></div>
+            </div>
+
+            <!-- Секция смены фона -->
+            <div class="geo-section scroll-animation">
+                <h2>Смена фона страницы</h2>
+                <p>Нажмите кнопку для случайного изменения фона</p>
+                <button class="btn" onclick="changeBackgroundColor()">Сменить цвет фона</button>
+                <div id="color-info" style="margin-top: 15px; font-weight: bold;"></div>
+            </div>
+        </section>
+
+        <a href="index.html" class="home-btn">На главную</a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Анимация при прокрутке
+        function checkScroll() {
+            const elements = document.querySelectorAll('.scroll-animation');
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect();
+                if (position.top < window.innerHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Управление анимациями
+        function startAllAnimations() {
+            const animatedElements = document.querySelectorAll('[class*="animation"]');
+            animatedElements.forEach(el => {
+                el.style.animationPlayState = 'running';
+            });
+            alert('Все анимации запущены!');
+        }
+
+        function stopAllAnimations() {
+            const animatedElements = document.querySelectorAll('[class*="animation"]');
+            animatedElements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+            });
+            alert('Все анимации остановлены!');
+        }
+
+        // Слушатель прокрутки
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        // Геолокация
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                alert("Geolocation не поддерживается вашим браузером");
+            }
+        }
+
+        function showPosition(position) {
+            const coordsDiv = document.getElementById('coordinates');
+            coordsDiv.innerHTML = `
+                <strong>Ваши координаты:</strong><br>
+                Широта: ${position.coords.latitude}<br>
+                Долгота: ${position.coords.longitude}<br>
+                Точность: ${position.coords.accuracy} метров
+            `;
+            coordsDiv.style.display = 'block';
+        }
+
+        function showError(error) {
+            let message = "Ошибка при получении геолокации: ";
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    message += "Пользователь отклонил запрос";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    message += "Информация о местоположении недоступна";
+                    break;
+                case error.TIMEOUT:
+                    message += "Время запроса истекло";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    message += "Неизвестная ошибка";
+                    break;
+            }
+            alert(message);
+        }
+
+        // Смена цвета фона
+        function changeBackgroundColor() {
+            const colors = [
+                { code: '#ffffff', name: 'Белый - чистота и простота' },
+                { code: '#ff6b6b', name: 'Красный - энергия и страсть' },
+                { code: '#4ecdc4', name: 'Бирюзовый - спокойствие и гармония' },
+                { code: '#45b7d1', name: 'Голубой - доверие и надежность' },
+                { code: '#96ceb4', name: 'Зеленый - природа и рост' },
+                { code: '#feca57', name: 'Желтый - оптимизм и радость' },
+                { code: '#ff9ff3', name: 'Розовый - нежность и любовь' },
+                { code: '#54a0ff', name: 'Синий - мудрость и стабильность' }
+            ];
+            
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor.code;
+            
+            const colorInfo = document.getElementById('color-info');
+            colorInfo.innerHTML = `
+                <div style="background: ${randomColor.code}; padding: 10px; border-radius: 5px; color: ${randomColor.code === '#ffffff' ? '#000' : '#fff'}">
+                    Текущий цвет: ${randomColor.code} - ${randomColor.name}
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
