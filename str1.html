@@ -3,11 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Трофимов Петр">
-    <title>Что такое VLAN?</title>
+    <title>Что такое VLAN - Технология VLAN</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Что такое VLAN?</h1>
-    <p>VLAN (Virtual Local Area Network) - VLAN (аббр. от англ. Virtual Local Area Network) — виртуальная локальная компьютерная сеть. Представляет собой группу хостов с общим набором требований[источник не указан 1638 дней], которые взаимодействуют так, как если бы они были подключены к широковещательному домену независимо от их физического местонахождения. VLAN имеет те же свойства, что и локальная сеть, но позволяет конечным членам группироваться вместе, даже если они не находятся в одной физической сети. Такая реорганизация может быть сделана на основе программного обеспечения вместо физического перемещения устройств.</p>
-    <a href="index.html">На главную</a>
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="str1.html" class="nav-link">Что такое VLAN</a></li>
+            <li class="nav-item"><a href="str2.html" class="nav-link">Типы VLAN</a></li>
+            <li class="nav-item"><a href="str3.html" class="nav-link">Применение VLAN</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-container">
+        <hr class="blue-line">
+
+        <h1>Что такое VLAN?</h1>
+        
+        <!-- Таблица с границами -->
+        <table class="vlan-table">
+            <tr>
+                <th>Параметр</th>
+                <th>Значение</th>
+                <th>Описание</th>
+            </tr>
+            <tr>
+                <td>VLAN ID</td>
+                <td>10</td>
+                <td>Идентификатор виртуальной сети</td>
+            </tr>
+            <tr>
+                <td>Имя VLAN</td>
+                <td>Sales</td>
+                <td>Название для отдела продаж</td>
+            </tr>
+            <tr>
+                <td>Порты</td>
+                <td>1-8</td>
+                <td>Назначенные порты коммутатора</td>
+            </tr>
+            <tr>
+                <td>Статус</td>
+                <td>Active</td>
+                <td>Статус виртуальной сети</td>
+            </tr>
+        </table>
+
+        <!-- Картинка с alt текстом -->
+        <img src="images/vlan-schema.jpg" alt="Извините, но здесь должна быть картинка" class="content-image">
+
+        <a href="index.html" class="home-btn">На главную</a>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

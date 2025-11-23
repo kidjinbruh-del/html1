@@ -2,64 +2,70 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Петр Трофимов">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Трофимов Петр">
     <title>Моя вёрстка VLAN</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <nav class="navbar">
-    <ul class="nav-menu">
-        <li class="nav-item">
-            <a href="index.html" class="nav-link">Главная</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">О VLAN</a>
-            <ul class="dropdown-menu">
-                <li><a href="str1.html" class="dropdown-link">Что такое VLAN</a></li>
-                <li><a href="str2.html" class="dropdown-link">Типы VLAN</a></li>
-                <li><a href="str3.html" class="dropdown-link">Настройка</a></li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a href="animation.html" class="nav-link">Анимации</a> <!-- Новая ссылка -->
-        </li>
-        <li class="nav-item">
-            <a href="registration.html" class="nav-link">Регистрация</a>
-        </li>
-    </ul>
-</nav>
+    <!-- Навигация с выпадающим меню -->
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">О VLAN</a>
+                <ul class="dropdown-menu">
+                    <li><a href="str1.html" class="dropdown-link">Что такое VLAN</a></li>
+                    <li><a href="str2.html" class="dropdown-link">Типы VLAN</a></li>
+                    <li><a href="str3.html" class="dropdown-link">Применение VLAN</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="animation.html" class="nav-link">Анимации</a>
+            </li>
+            <li class="nav-item">
+                <a href="registration.html" class="nav-link">Регистрация</a>
+            </li>
+        </ul>
+    </nav>
 
-    <!-- Герой секция -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="content animated">
-                <h1>Технология VLAN</h1>
-                
-                <!-- YouTube видео -->
-                <h2>Обучающие видео</h2>
-                <ul>
-        <li><a href="https://yandex.ru/video/preview/4988488209265583056?from=tabbar&parent-reqid=1760529292171090-12256172777442546868-balancer-l7leveler-kubr-yp-sas-91-BAL&text=основы+vlan+для+начинающих+видео" target="_blank">Основы VLAN для начинающих</a></li>
-        <li><a href="https://yandex.ru/video/preview/17589755286688615817?from=tabbar&parent-reqid=1760529326249266-10767285210659103743-balancer-l7leveler-kubr-yp-sas-91-BAL&reqid=1760529325798961-10300137266424887262-balancer-l7leveler-kubr-yp-sas-91-BAL&text=yfcnhjqrf+vlan+yf+rjvvenfnjhf%5B+видео" target="_blank">Настройка VLAN на коммутаторах</a></li>
-        <li><a href="https://yandex.ru/video/preview/15353078758904350662?from=tabbar&parent-reqid=1760529346559261-2215322940940887930-balancer-l7leveler-kubr-yp-sas-91-BAL&reqid=1760529326249266-10767285210659103743-balancer-l7leveler-kubr-yp-sas-91-BAL&suggest_reqid=84333684175404351093271585572523&text=vlan+ntjhbz+b+ghfrnbrfвидео" target="_blank">VLAN: теория и практика</a></li>
-    </ul>
+    <div class="content-container">
+        <!-- Синяя горизонтальная линия -->
+        <hr class="blue-line">
 
-                <!-- Страницы сайта -->
-                <h2>Разделы сайта</h2>
-                <ol>
-                    <li><a href="str1.html" target="_blank">Что такое VLAN?</a></li>
-                    <li><a href="str2.html" target="_blank">Типы VLAN</a></li>
-                    <li><a href="str3.html" target="_blank">Настройка VLAN</a></li>
-                </ol>
+        <h1>Технология VLAN</h1>
+        
+        <!-- Список YouTube ссылок -->
+        <h2>Обучающие видео на YouTube:</h2>
+        <ul>
+            <li><a href="https://video-preview.s3.yandex.net/LjndPgIAAAA.mp4" target="_blank">Основы VLAN для начинающих</a></li>
+            <li><a href="https://yandex.ru/video/preview/17589755286688615817?text=%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20VLAN%20%D0%BD%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BC%D1%83%D1%82%D0%B0%D1%82%D0%BE%D1%80%D0%B0%D1%85&path=yandex_search&parent-reqid=1763913612745722-12068462937723822020-balancer-l7leveler-kubr-yp-klg-123-BAL&from_type=carousel" target="_blank">Настройка VLAN на коммутаторах</a></li>
+            <li><a href="https://video-preview.s3.yandex.net/V71OTgIAAAA.mp4" target="_blank">VLAN: теория и практика</a></li>
+        </ul>
 
-                <!-- Картинка -->
-                <img src="https://i.pinimg.com/originals/5e/dd/e3/5edde3a87543e1ede048eda5c8706fe3.jpg" alt="VLAN Technology" class="featured-image">
+        <!-- Список переходов на другие страницы -->
+        <h2>Разделы сайта:</h2>
+        <ol>
+            <li><a href="str1.html" target="_blank">Что такое VLAN?</a></li>
+            <li><a href="str2.html" target="_blank">Типы VLAN</a></li>
+            <li><a href="str3.html" target="_blank">Практическое применение VLAN</a></li>
+        </ol>
 
-                <!-- Кнопка домой -->
-                <a href="index.html" class="home-btn">На главную</a>
-            </div>
+        <!-- Картинка с alt текстом -->
+        <img src="https://i.pinimg.com/736x/c7/af/c9/c7afc9c822b79007795bb7f24bb277d5.jpg" alt="Извините, но здесь должна быть картинка" class="main-image">
+    </div>
+
+    <!-- Модальное окно приветствия -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeWelcome()">&times;</span>
+            <h2>🎉 Добро пожаловать!</h2>
+            <p>Добро пожаловать на сайт, посвящённый технологии VLAN!</p>
+            <p>Здесь вы узнаете всё о виртуальных локальных сетях, их типах и практическом применении.</p>
+            <button class="welcome-btn" onclick="closeWelcome()">Начать изучение</button>
         </div>
-    </section>
+    </div>
 
     <script src="script.js"></script>
 </body>

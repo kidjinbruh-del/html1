@@ -7,127 +7,176 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
-    line-height: 1.6;
+    font-size: 16px;
     color: #333;
-}
-
-.container {
+    background-color: #f8f8f8;
+    line-height: 1.7;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Стили для навигации */
-.navbar {
-    background: linear-gradient(135deg, #444, #333);
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.nav-item {
-    position: relative;
-    margin: 0 15px;
-}
-
-.nav-link {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: block;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-}
-
-.nav-link:hover {
-    background: #555;
-    transform: translateY(-2px);
-}
-
-/* Выпадающее меню */
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #333;
-    min-width: 200px;
-    list-style: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.nav-item:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-link {
-    color: #fff;
-    padding: 12px 20px;
-    display: block;
-    text-decoration: none;
-    transition: background 0.3s ease;
-    border-bottom: 1px solid #444;
-}
-
-.dropdown-link:hover {
-    background: #444;
-}
-
-/* Стили для картинки */
-.featured-image {
+/* Синяя горизонтальная линия */
+.blue-line {
+    border: 2px solid blue;
+    margin: 20px 0;
     width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    margin: 20px auto;
-    display: block;
-    transition: transform 0.3s ease;
 }
 
-.featured-image:hover {
-    transform: scale(1.02);
-}
-
-/* Стили для текста */
-.content {
-    background: rgba(255,255,255,0.95);
+/* Контейнер для контента */
+.content-container {
+    background: white;
     padding: 30px;
     border-radius: 10px;
-    margin: 20px 0;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 20px 0;
 }
 
+/* Форматирование заголовков */
 h1 {
     font-size: 2.5em;
     color: #2c3e50;
-    margin-bottom: 20px;
+    margin: 25px 0;
     text-align: center;
+    font-weight: bold;
 }
 
 h2 {
     font-size: 2em;
     color: #34495e;
-    margin: 20px 0;
+    margin: 20px 0 15px 0;
+    font-weight: 600;
+    border-left: 4px solid #667eea;
+    padding-left: 15px;
 }
 
+h3 {
+    font-size: 1.5em;
+    color: #5d6d7e;
+    margin: 18px 0 12px 0;
+    font-weight: 500;
+}
+
+/* Форматирование параграфов */
 p {
     font-size: 1.1em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: justify;
     line-height: 1.8;
-    margin-bottom: 15px;
+}
+
+/* Форматирование списков */
+ul, ol {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+ul li, ol li {
+    margin-bottom: 12px;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+ul li {
+    list-style-type: disc;
+    color: #2c3e50;
+}
+
+ol li {
+    list-style-type: decimal;
+    color: #2c3e50;
+}
+
+/* Ссылки */
+ul li a, ol li a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover, ol li a:hover {
+    color: #5a67d8;
+    text-decoration: underline;
+}
+
+/* Картинки */
+.main-image {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.content-image {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Картинка слева от текста */
+.image-text-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    margin: 30px 0;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.left-image {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.text-content {
+    flex: 1;
+}
+
+/* Таблица */
+.vlan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.vlan-table th,
+.vlan-table td {
+    border: 2px solid #34495e;
+    padding: 15px;
+    text-align: left;
+    font-size: 1.05em;
+}
+
+.vlan-table th {
+    background: #667eea;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.vlan-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.vlan-table tr:hover {
+    background-color: #e8f4f8;
 }
 
 /* Форма регистрации */
@@ -166,77 +215,230 @@ p {
     border-radius: 5px;
     font-size: 1.1em;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease;
     display: block;
     width: 100%;
+    font-weight: bold;
 }
 
 .btn:hover {
     background: #14a20a;
-    transform: translateY(-2px);
 }
 
 /* Кнопка домой */
 .home-btn {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: #667eea;
     color: white;
-    padding: 12px 25px;
+    padding: 1em 2em;
     border: none;
     border-radius: 25px;
     text-decoration: none;
     display: inline-block;
-    font-size: 1.1em;
+    font-size: 1em;
     margin: 20px 0;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
+    font-weight: bold;
+    text-align: center;
 }
 
 .home-btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    background: #5a67d8;
 }
 
-/* Анимации */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Навигация */
+.navbar {
+    background: #444;
+    padding: 1rem 0;
+    margin-bottom: 20px;
 }
 
-.animated {
-    animation: fadeIn 0.8s ease-out;
-}
-
-/* Фон с градиентом */
-.hero-section {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0)), 
-                url('background.jpg') center/cover;
-    min-height: 100vh;
+.nav-menu {
+    list-style: none;
     display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 20px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    background: #555;
+}
+
+/* Выпадающее меню */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    min-width: 200px;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-link {
+    color: #fff;
+    padding: 12px 20px;
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-link:hover {
+    background: #444;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 15% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 500px;
     text-align: center;
     color: white;
-}
-/* Стили для управления анимациями */
-.animation-paused {
-    animation-play-state: paused !important;
-    -webkit-animation-play-state: paused !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s ease;
+    position: relative;
 }
 
-.animation-running {
-    animation-play-state: running !important;
-    -webkit-animation-play-state: running !important;
+.modal-content h2 {
+    color: white;
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+    font-size: 2em;
 }
 
-/* остановка анимаций */
-.animations-stopped .pulse-circle,
-.animations-stopped .bouncing-ball,
-.animations-stopped .rotating-square,
-.animations-stopped .sliding-bar,
-.animations-stopped .typing-text,
-.animations-stopped .progress-fill,
-.animations-stopped .floating-element,
-.animations-stopped .color-changing-box {
-    animation: none !important;
-    -webkit-animation: none !important;
+.modal-content p {
+    color: rgba(255,255,255,0.9);
+    background: none;
+    padding: 0;
+    border-left: none;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #ffeb3b;
+}
+
+.welcome-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.welcome-btn:hover {
+    background: white;
+    color: #667eea;
+    transform: translateY(-2px);
+}
+
+/* Анимации для модального окна */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        font-size: 14px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    .image-text-container {
+        flex-direction: column;
+    }
+    
+    .left-image {
+        max-width: 100%;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 30px 20px;
+    }
 }

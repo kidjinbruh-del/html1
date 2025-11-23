@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Регистрация - VLAN</title>
+    <meta name="author" content="Трофимов Петр">
+    <title>Регистрация - Технология VLAN</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,28 +11,36 @@
         <ul class="nav-menu">
             <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
             <li class="nav-item"><a href="registration.html" class="nav-link">Регистрация</a></li>
+            <li class="nav-item"><a href="animation.html" class="nav-link">Анимации</a></li>
         </ul>
     </nav>
 
-    <div class="container">
-        <div class="content animated">
-            <h1>Регистрация</h1>
-            
-            <form class="registration-form">
-                <div class="form-group">
-                    <input type="text" class="form-input" placeholder="Имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-input" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-input" placeholder="Пароль" required>
-                </div>
-                <button type="submit" class="btn">Зарегистрироваться</button>
-            </form>
+    <div class="content-container">
+        <h1>Регистрация</h1>
+        
+        <form class="registration-form" onsubmit="return handleRegistration(event)">
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="Имя" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-input" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input" placeholder="Пароль" required>
+            </div>
+            <button type="submit" class="btn">Зарегистрироваться</button>
+        </form>
 
-            <a href="index.html" class="home-btn">На главную</a>
-        </div>
+        <a href="index.html" class="home-btn">На главную</a>
     </div>
+
+    <script>
+        // Функция для формы регистрации
+        function handleRegistration(event) {
+            event.preventDefault();
+            alert('Регистрация успешно завершена!');
+            return false;
+        }
+    </script>
 </body>
 </html>
